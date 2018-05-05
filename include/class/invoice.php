@@ -482,7 +482,12 @@ class invoice {
 
 			foreach ($tax as $key => $value)
 			{
+				$sql = "SELECT * FROM ".TB_PREFIX."tax WHERE tax_id = :id";
+				$tth = dbQuery($sql, ':id', $value['tax_id']);
+				$taxes = $tth->fetch();
+
 				$invoiceItem['tax'][$key] = $value['tax_id'];
+				$invoiceItem['tax_name'][$key] = $taxes['tax_description'];
 				$logger->log('Invoice: '.$invoiceItem['invoice_id'].' Item id: '.$invoiceItem['id'].' Tax '.$key.' Tax ID: '.$value['tax_id'], Zend_Log::INFO);
 			}
 			$invoiceItems[$i] = $invoiceItem;

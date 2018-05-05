@@ -5,10 +5,10 @@
 ; Production site configuration data
 [production]
 database.adapter                    = pdo_mysql
-database.utf8                       = true
-database.params.host                = localhost
+database.utf8                       = false
+database.params.host                = mysql
 database.params.username            = root
-database.params.password            = ''
+database.params.password            = simple_invoices
 database.params.dbname              = simple_invoices
 database.params.port                = 3306
 
@@ -24,7 +24,7 @@ export.pdf.rightmargin              = 15
 export.pdf.topmargin                = 15
 export.pdf.bottommargin             = 15
 
-local.locale                        = en_GB
+local.locale                        = es_ES.UTF-8
 local.precision                     = 2
 
 email.host                          = localhost

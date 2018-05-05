@@ -4,6 +4,8 @@ SET @saved_col_client    = @@collation_database;
 SET character_set_client = utf8;
 SET collation_database   = utf8_unicode_ci;
 
+SET GLOBAL sql_mode='STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION';
+
 CREATE TABLE IF NOT EXISTS `si_biller` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
   `domain_id` int(11) NOT NULL DEFAULT '1',
