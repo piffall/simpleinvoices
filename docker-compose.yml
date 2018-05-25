@@ -3,11 +3,11 @@ version: '3'
 services:
 
   webserver:
-    build: .
+    image: piffall/docker-apache-php-xdebug
     volumes:
       - .:/var/www/html
     environment:
-      XDEBUG_CONFIG: remote_host=192.168.1.141
+      XDEBUG_CONFIG: remote_host=${HOST_IP}
     ports:
       - "8081:80"
 
